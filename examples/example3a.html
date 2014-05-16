@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <style type="text/css">
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="example3">
+      <h2>Example 3a</h2>
+    </div>
+
+    <script type="text/javascript">
+     
+     // define width and height of the SVG element
+     var w = 960;
+     var h = 500;
+
+     // define a translation function that:
+     //   moves the text to the bottom right
+     //   scales the size 
+     //   rotates it
+     function translate() {
+       return  "translate("+w+","+h+")scale(3)rotate(180)";
+     }
+
+     // define a mouseover callback
+     var mouseover = function(d,i) {
+       // select the mouseover elements
+       var t = d3.select(this);
+       t.transition() // transition from current state to new
+        .duration(1000) // lasting one second 
+        .attr("transform", translate) // apply the svg transform
+        .transition()  // transition to current state to new
+        .delay(1000) // lasting one second 
+        .attr( "transform", ""); // clear the tranform, returning position
+     }
+     
+     
+     function example3(data)
+     {
+       // find our example 3 div and append an SVG element to it
+       var example3_svg = d3.select("#example3")
+                            .append("svg")
+                            .attr("width", w)
+                            .attr("height", h);
+       
+       // set the background for our svg
+       example3_svg.style("background-color", "#999999");
+       
+       // bind our data to SVG Text elements
+       var text = example3_svg.selectAll("text").data(data);
+
+       text.enter()
+          .append("text") // create the text element
+          .attr("x", 10) // set the x as constant
+          .attr("y", function(d, i) { return (i + 1) *20;}) // based on index
+          .style("font-size", "12") 
+          .style("fill", "blue")       
+          .on("mouseover", mouseover) // bind the mouseover callback
+          .text(function(d){return d;});
+     }
+     
+     
+     // this call to d3.json is executed on page load   
+     d3.json("data/stillalive.json", function(error, json) {
+       
+       if (error) {
+         return console.warn(error);
+       }
+       
+       // we get here once the json file is loaded 
+       // call our callback with the json data
+       example3(json);
+     });
+
+    </script>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    Adapted from <a href="http://bl.ocks.org/mbostock/1345853">http://bl.ocks.org/mbostock/1345853</a>
+  </body>
+</html>

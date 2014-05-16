@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<style type="text/css">
+</style>
+
+</head>
+
+<body>
+
+
+<button id="button1" onclick="button1_click()">Do It!</button>
+
+<div id="example2">
+  <h2>Example 2b</h2>
+</div>
+
+<script type="text/javascript">
+
+ // this is a callback function for our json data
+   function example2(data){
+     
+     // find our specific example2 div
+     var example2_div=d3.select("#example2"); 
+     
+     // set the background color to a gray color
+     example2_div.style("background-color", "#999999");
+     
+     // select/bind paragraph elements to our json data by *value*
+     var myP = example2_div
+                 .selectAll("p")
+                 .data(data, function(d){return d;});
+
+     // when new elements appear, append the new paragraph elements
+     // color blue
+     // text is the value of the data element
+     myP.enter()
+        .append("p")
+        .style("color", "blue")
+        .text(function(d){return d;});
+     
+     // when elements exit
+     // turn them red 
+     // then remove them
+     myP
+        .exit()
+        .transition()
+        .duration(2500)
+        .style("color", "red")
+        .remove();
+   }
+
+// callback for our button click
+function button1_click() {
+
+   d3.json("data/stillalive.json", function(error, json) {
+
+     if (error) {
+       return console.warn(error);
+     }
+     
+     // we get here once the json file is loaded 
+     // call our callback with the json data
+     example2(json);
+
+     // copy the array
+     var data2 = json.slice(0);
+
+     // remove the middle 3 elements from it
+     data2.splice(2, 3);
+
+     // call the callback with the new dataset
+     example2(data2);
+
+   });
+}
+ 
+</script>
+</div>
+
+</body>
+</html>
