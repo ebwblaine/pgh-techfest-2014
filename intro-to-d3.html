@@ -61,14 +61,11 @@
       <section class="slide">
         <h2>Running Examples</h2>
         <p>Some d3 examples (json) require an http server</p>
-        <pre style="font-size:50%">
-          ~ $ cd examples
-          ~/examples $ python -m SimpleHTTPServer
-          Serving HTTP on 0.0.0.0 port 8000 ...
-        </pre>
+        <pre>     ~ $ cd examples
+     ~/examples $ python -m SimpleHTTPServer
+     Serving HTTP on 0.0.0.0 port 8000 ...</pre>
         <img src="images/example1.png" align="center"/>
       </section>
-
 
       <section class="slide">
         <h2>Today's Topics</h2>
@@ -85,13 +82,45 @@
       <section class="slide">
         <h2>About D3.js </h2>
         <img src="images/d3logo.svg" align="right" hspace="10" vspace="6">
+        <pre>D3.js is a JavaScript library for manipulating documents based on data.
+- <a href="http://d3js.org">d3js.org</a></pre>
+
         <ul>
-          <li><a href="http://d3js.org">d3js.org</a></li>
-          <li>Full source and tests available  <a href="https://github.com/mbostock/d3">https://github.com/mbostock/d3</a></li>
           <li>Created by Mike Bostock (<a href="https://twitter.com/mbostock">@mbostock</a>)</li>
+          <li>Declarative programming model</li>
+          <li>Full source and tests available  <a href="https://github.com/mbostock/d3">https://github.com/mbostock/d3</a></li>
           <li>BSD Licensed</li>
-        </p>
       </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <img src="images/basic-charts.png">
+
+      </section>
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts1.png" align="left"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts2.png" align="left"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts3.png" />
+      </section>
+
+      <section class="slide">
+        <h2>Declarative Programming</h2>
+        <pre><p>In computer science, declarative programming is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow.</p>
+- Wikipedia article on <a href="http://en.wikipedia.org/wiki/Declarative_programming">Declarative Programming</a></pre>
+      </section>
+
 
       <section class="slide">
         <h2>Selections</h2>
@@ -103,77 +132,190 @@
 
       <section class="slide">
         <h2>Selections - CSS</h2>
+        <pre>
+<b><font color="#0000FF">&lt;style</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/css"</font><b><font color="#0000FF">&gt;</font></b>
+ body
+ <font color="#FF0000">{</font>
+   <font color="#0000FF">background-color:</font><font color="#FF0000">#CCCCCC</font>;
+ <font color="#FF0000">}</font>
+ p
+ <font color="#FF0000">{</font>
+   <font color="#0000FF">color:</font><i><font color="#009900">blue</font></i>;
+ <font color="#FF0000">}</font>
+<b><font color="#0000FF">&lt;/style&gt;</font></b>
+<b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1a<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+        </pre>
+      </section>
+
+      <section class="slide">
+        <h2>Selections - CSS</h2>
         <iframe src="examples/example1a.html" width="95%"></iframe>
-        <pre width="95%"><iframe 
-          src="examples/example1a-p.html" 
-          height="570" width="100%" 
-          scrolling="auto">
-        </iframe></pre>
+      </section>
+
+      <section class="slide">
+        <h2>Selections - JS</h2>
+        <pre>
+<tt><b><font color="#0000FF">&lt;style</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/css"</font><b><font color="#0000FF">&gt;</font></b>
+ body
+ <font color="#FF0000">{</font>
+   <font color="#0000FF">background-color:</font><font color="#FF0000">#CCCCCC</font>;
+ <font color="#FF0000">}</font>
+<b><font color="#0000FF">&lt;/style&gt;</font></b>
+
+<b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1b<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+   <b><font color="#0000FF">var</font></b> paragraphs <font color="#990000">=</font> document<font color="#990000">.</font><b><font color="#000000">getElementsByTagName</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">);</font>
+   <b><font color="#0000FF">for</font></b> <font color="#990000">(</font><b><font color="#0000FF">var</font></b> i <font color="#990000">=</font> <font color="#993399">0</font><font color="#990000">;</font> i <font color="#990000">&lt;</font> paragraphs<font color="#990000">.</font>length<font color="#990000">;</font> i<font color="#990000">++)</font> <font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> paragraph <font color="#990000">=</font> paragraphs<font color="#990000">.</font><b><font color="#000000">item</font></b><font color="#990000">(</font>i<font color="#990000">);</font>
+     paragraph<font color="#990000">.</font>style<font color="#990000">.</font><b><font color="#000000">setProperty</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">,</font> <b><font color="#0000FF">null</font></b><font color="#990000">);</font>
+   <font color="#FF0000">}</font>
+<b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+</tt></pre>
       </section>
 
       <section class="slide">
         <h2>Selections - JS</h2>
         <iframe src="examples/example1b.html" width="80%"></iframe>
-        <pre width="95%"><iframe 
-          src="examples/example1b-p.html" 
-          height="400" width="100%"
-          scrolling="auto">
-        </iframe></pre>
       </section>
+
+      <section class="slide">
+        <h2>Selections - D3</h2>
+        <pre><tt><b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1c<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+
+    <i><font color="#9A1900">// find the body</font></i>
+   <b><font color="#0000FF">var</font></b> body <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+
+   <i><font color="#9A1900">// make the background lighter</font></i>
+   body<font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"background-color"</font><font color="#990000">,</font> <font color="#FF0000">"#CCCCCC"</font><font color="#990000">);</font>
+   
+   <i><font color="#9A1900">// select all of the paragraph elements</font></i>
+   <i><font color="#9A1900">// and set them to be color white</font></i>
+   body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+       <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font>
+   
+<b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+</tt></pre>
+      </section>
+
 
       <section class="slide">
         <h2>Selections - D3</h2>
         <iframe src="examples/example1c.html" width="80%" ></iframe>
-        <pre width="95%"><iframe 
-          src="examples/example1c-p.html" 
-          height="400" width="100%"
-          scrolling="auto">
-        </iframe></pre>
       </section>
 
       <section class="slide">
         <h2>Selections - D3</h2>
+        <h3>D3 did something tricky there</h3>
+        <pre>body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+       <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font> </pre>
+       </section>
 
-        <iframe src="examples/example1d.html" 
-                style="float:left;width:30%;" 
-                height="300" scrolling="no"></iframe>
-        <pre 
-          style="margin-bottom:0;float:right;width:55%"><iframe 
-          src="examples/example1d-p.html" 
-          style="align:left;" 
-          height="475" width="100%" scrolling="auto"></iframe></pre>
-        <br clear="all"/>
+      <section class="slide">
+        <h2>Selections - D3</h2>
+        <p>Let's add some more paragraph elements to the source</p>
+        <pre>
+<tt><b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1d<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3 Again!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>And again!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+   
+    <i><font color="#9A1900">// find the body</font></i>
+    <b><font color="#0000FF">var</font></b> body <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+
+    <i><font color="#9A1900">// make the background lighter</font></i>
+    body<font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"background-color"</font><font color="#990000">,</font> <font color="#FF0000">"#CCCCCC"</font><font color="#990000">);</font>
+
+    <i><font color="#9A1900">// select all of the paragraph elements</font></i>
+    <i><font color="#9A1900">// and set them to be color white</font></i>
+    body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font>
+
+<b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/div&gt;</font></b>
+
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+</tt>          
+        </pre>
+      </section>
+
+
+     <section class="slide">
+        <h2>Selections - D3</h2>
+
+        <iframe src="examples/example1d.html" width="80%" height="220"></iframe>
         <br/><p>The D3 code is the same, only the document changed.</p>
       </section>
+
+
+      <section class="slide">
+        <h2>Selections - D3</h2>
+        <p>When using D3, you don't write loops, you declare what you want against <em>selections</em></p>
+        <pre>body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+       <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font> </pre>
+       </section>
 
 
       <section class="slide" >
         <h2>Properties</h2>
         <h3>Data-Driven <em>Documents</em></h3>
         <p>D3 supports static dynamic properties on DOM elements</p>
-        <pre>body.selectAll("p")
-    .style("color", "#AAAAAA");</pre>
+        <pre><tt>body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+    <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"#AAAAAA"</font><font color="#990000">);</font>
 
-        <pre>body.selectAll("p")
-    .style("color", function(d, i) {
-       return "hsl(" + Math.random() * 360 + ",100%,50%)";
-    });</pre>
+body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+    <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font>
+        <b><font color="#0000FF">return</font></b> <font color="#FF0000">"hsl("</font> <font color="#990000">+</font> Math<font color="#990000">.</font><b><font color="#000000">random</font></b><font color="#990000">()</font> <font color="#990000">*</font> <font color="#993399">360</font> <font color="#990000">+</font> <font color="#FF0000">",100%,50%)"</font><font color="#990000">;</font>
+    <font color="#FF0000">}</font><font color="#990000">);</font></tt> </pre>
         <p>Both Valid</p>
 
       </section>
 
       <section class="slide" >
         <h2>Properties</h2>
+        <pre>
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">button1_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body <font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+
+     body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font>
+       <b><font color="#0000FF">return</font></b> <font color="#FF0000">"hsl("</font> <font color="#990000">+</font> Math<font color="#990000">.</font><b><font color="#000000">random</font></b><font color="#990000">()</font> 
+                     <font color="#990000">*</font> <font color="#993399">360</font> <font color="#990000">+</font> <font color="#FF0000">",100%,50%)"</font><font color="#990000">;</font>
+     <font color="#FF0000">}</font><font color="#990000">);</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">reset_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+     body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <b><font color="#0000FF">null</font></b><font color="#990000">);</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font></tt>                  </pre>
+        <br clear="all"/>
+        <br/>
+        <p>Setting a property to <em>null</em> clears the property.<br/>
+      </section>
+
+
+      <section class="slide" >
+        <h2>Properties</h2>
         <iframe src="examples/example2a.html" width="95%" height="200"></iframe>
-        <pre width="95%"><iframe 
-          src="examples/example2a-p.html" 
-          height="570" width="100%" 
-          scrolling="auto">
-        </iframe></pre>
         <br clear="all"/>
         <br/>
         <p>Debug this example to see the elements changed live<br/>
-          <a href="http://d3js.org/#properties">http://d3js.org/#properties</a></p>
+          also see: <a href="http://d3js.org/#properties">http://d3js.org/#properties</a></p>
       </section>
 
       <section class="slide" >
@@ -181,11 +323,11 @@
         <h3><em>Data</em>-Driven Documents</h3>
         <br/>
         <p>D3 joins data elements to dom elements with the <em>data</em> function. This is easiest to understand with an example</p>
-        <pre>var home = 
-    ["Walter","Skyler", 
-     "Hank", "Marie"];
-var para =
-    body.selectAll("p").data(names);</pre>
+        <pre><tt><b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> 
+    <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> 
+     <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+<b><font color="#0000FF">var</font></b> para <font color="#990000">=</font>
+    body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">).</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font></tt></pre>
         <p>This has no direct effect.  This call to <em>data</em> tells D3 that you want paragraph elements in the document body to be associated with the names in the array.  This creates selections that can be manipulated.</p>
       </section>
 
@@ -330,6 +472,27 @@ para.exit().remove(); // exit</pre>
           src="examples/example4b-p.html" 
           style="align:left;" 
           height="475" width="100%" scrolling="auto"></iframe></pre>
+      </section>
+
+      <section class="slide">
+        <h2>Animation</h2>
+var sampleSVG = d3.select("#viz")
+    .append("svg")
+    .attr("width", 100)
+    .attr("height", 100);    
+    
+sampleSVG.append("circle")
+    .style("stroke", "gray")
+    .style("fill", "white")
+    .attr("r", 40)
+    .attr("cx", 50)
+    .attr("cy", 50)
+  .transition()
+    .delay(100)
+    .duration(1000)    
+    .attr("r", 10)
+    .attr("cx", 30)
+    .style("fill", "black");
       </section>
 
       <section class="slide">
