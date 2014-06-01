@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>Introduction to D3.js</title>
+
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="js/deck.js/core/deck.core.css">
+
+    <!-- Extension CSS files go here. Remove or add as needed. -->
+    <link rel="stylesheet" media="screen" href="js/deck.js/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="js/deck.js/extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="js/deck.js/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="js/deck.js/extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="js/deck.js/extensions/scale/deck.scale.css">
+    <link href="js/prism.css" rel="stylesheet" />
+
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="js/deck.js/themes/style/web-2.0.css">
+
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="js/deck.js/themes/transition/horizontal-slide.css">
+
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="js/deck.js/core/print.css">
+
+    <!-- Required Modernizr file -->
+    <script src="js/deck.js/modernizr.custom.js"></script>
+    <script src="js/prism.js"></script>
+  </head>
+  <body>
+    <div class="deck-container">
+
+      <!-- Begin slides. Just make elements with a class of slide. -->
+
+      <section class="slide">
+        <h1>Introduction to D3.js</h1>
+      </section>
+
+      <section class="slide">
+        <h2>Introduction to D3.js</h2>
+        <h3>Data-Driven Documents</h3>
+        <h3>Eric Blaine Werner</h3>
+        <h3>Pittsburgh Techfest</h3>
+        <h3>June 7, 2014</h3>
+      </section>
+
+      <section class="slide">
+        <h2>About Eric Werner</h2>
+        <img align="right" src="images/ebw_from_below_effects.jpg"/>
+        <h3><a href="https://twitter.com/ebwinpgh">@ebwinpgh</a></h3>
+        <p>Technical Director<br/>
+          <a href="http://www.sei.cmu.edu/about/organization/etc/">Emerging Technolgy Center</a>
+          (<a href="https://twitter.com/sei_etc">@sei_etc</a>)<br/>
+          <a href="http://www.sei.cmu.edu/">Software Engineering Institute</a>
+          (<a href="https://twitter.com/seinews">@seinews</a>)<br/>
+          <a href="http://www.cmu.edu">Carnegie Mellon University</a>
+          (<a href="https://twitter.com/CarnegieMellon">@CarnegieMellon</a>)<br/><br/>
+          <p>eric.werner@gmail.com</p>
+      </section>
+
+      <section class="slide">
+        <h2>Running Examples</h2>
+        <p>Some d3 examples (json) require an http server</p>
+        <pre style="font-size:50%">
+          ~ $ cd examples
+          ~/examples $ python -m SimpleHTTPServer
+          Serving HTTP on 0.0.0.0 port 8000 ...
+        </pre>
+        <img src="images/example1.png" align="center"/>
+      </section>
+
+
+      <section class="slide">
+        <h2>Today's Topics</h2>
+        <ul>
+          <li>Selections</li>
+          <ul>
+            <li>CSS Selections</li>
+            <li>JS Selections</li>
+            <li>D3 Selections</li>
+          </ul>
+          <li>Transitions</li>
+          <li>Data</li>
+          <li>Binding</li>
+          <li>Plugins</li>
+        </ul>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <img src="images/d3logo.svg" align="right" hspace="10" vspace="6">
+        <ul>
+          <li><a href="http://d3js.org">d3js.org</a></li>
+          <li>Full source and tests available  <a href="https://github.com/mbostock/d3">https://github.com/mbostock/d3</a></li>
+          <li>Created by Mike Bostock (<a href="https://twitter.com/mbostock">@mbostock</a>)</li>
+          <li>BSD Licensed</li>
+        </p>
+      </section>
+
+      <section class="slide">
+        <h2>Selections</h2>
+        <h3>Data-Driven <em>Documents</em></h3>
+      </section>
+
+      <section class="slide">
+        <h2>Selections - CSS</h2>
+        <iframe src="examples/example1a.html" width="95%" height="70%"></iframe>
+        <pre width="95%"><iframe 
+          src="examples/example1a-p.html" 
+          height="570" width="100%" 
+          scrolling="auto">
+        </iframe></pre>
+      </section>
+
+      <section class="slide">
+        <h2>Selections - JS</h2>
+        <iframe src="examples/example1b.html" width="80%" height="300"></iframe>
+        <pre width="95%"><iframe 
+          src="examples/example1b-p.html" 
+          height="400" width="100%"
+          scrolling="auto">
+        </iframe></pre>
+      </section>
+
+      <section class="slide">
+        <h2>Selections - D3</h2>
+        <iframe src="examples/example1c.html" width="80%" height="70%"></iframe>
+        <pre width="95%"><iframe 
+          src="examples/example1c-p.html" 
+          height="400" width="100%"
+          scrolling="auto">
+        </iframe></pre>
+      </section>
+
+      <section class="slide" >
+        <h2>transitions</h2>
+        <h3>example 2a</h3>
+        <iframe src="examples/example2a.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <pre 
+          style="margin-bottom:0;float:right;width:55%"><iframe 
+          src="examples/example2a-p.html" 
+          style="align:left;" 
+          height="550" width="100%" scrolling="auto"></iframe></pre>
+        <br clear="all"/>
+        <br/>
+        <p><a href="http://bost.ocks.org/mike/transition/">http://bost.ocks.org/mike/transition</a></p>
+      </section>
+
+      <section class="slide" >
+        <h3><em>Data</em>-Driven Documents</h3>
+        <h3>example 3a</h3>
+      </section>
+      <section class="slide" >
+        <h2>data</h2>
+        <h3>example 3a</h3>
+        <iframe src="examples/example3a.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <pre 
+          style="margin-bottom:0;float:right;width:55%"><iframe 
+          src="examples/example3a-p.html" 
+          style="align:left;" 
+          height="550" width="100%" scrolling="auto"></iframe></pre>
+        <br clear="all"/>
+        <br/>
+        <p><a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
+      </section>
+
+      <section class="slide">
+        <h2>Data</h2>
+        <h3><em>Data</em>-Driven Documents</h3>
+        <a href="http://bost.ocks.org/mike/d3/workshop/#48">More Information</a>
+      </section>
+
+      <section class="slide">
+        <h2>General Update Pattern </h2>
+        <h3>NEW EXAMPLE!</h3>
+        <h3>in-script data</h3>
+        <a href="http://bost.ocks.org/mike/d3/workshop/#48">More Information</a>
+      </section>
+
+      <section class="slide">
+        <h2>Key Functions</h2>
+        <h3>in-script data</h3>
+      </section>
+
+
+      <section class="slide">
+        <h2>JSON</h2>
+        <h3>general update pattern + json</h3>
+        <p> example 2, 2a, 2b</p>
+      </section>
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>quick svg overview</h3>
+        <p> svg structure</p>
+        http://bost.ocks.org/mike/bar/2/
+      </section>
+
+      <section class="slide">
+        <h2>SVG example</h2>
+        <h3>static svg in html code</h3>
+      </section>
+
+      <section class="slide">
+        <h2>Our text example ported to SVG</h2>
+        <h3>example 3</h3>
+      </section>
+
+      <section class="slide">
+        <h2>Taking advantage of SVG transformations & mouse events</h2>
+        <h3>example 3a</h3>
+      </section>
+
+      <section class="slide">
+        <h2>Now with actual images</h2>
+        <h3>example 3b</h3>
+      </section>
+
+      <section class="slide">
+        <h2>bar chart example, maybe svg</h2>
+      </section>
+
+      <section class="slide">
+        <h2>PLUGINS are the real power of d3</h2>
+        <h3>lots of screenshots</h3>
+      </section>
+
+      <section class="slide">
+        <h2>network example, same concepts, using network plugin</h2>
+      </section>
+
+      <section class="slide">
+        <h2>stuff not covered!</h2>
+        <p>
+          Scales - convert between data and visual encodings
+          Time - parse or format times, compute calendar intervals, etc.
+          Geography - project spherical coordinates, latitude & longitude math
+          Geometry - utilities for 2D geometry, such as Voronoi diagrams and quadtrees
+        </p>
+      <section class="slide">
+        <h2>more information</h2>
+      </section>
+
+      <section class="slide">
+        <h2>Thank You!</h2>
+      </section>
+
+      <section class="slide">
+        <h2>references and tools</h2>
+        http://hilite.me/
+      </section>
+
+
+
+
+      <!-- End slides. -->
+
+      <!-- Begin extension snippets. Add or remove as needed. -->
+
+      <!-- deck.navigation snippet -->
+      <div aria-role="navigation">
+        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+      </div>
+
+      <!-- deck.status snippet -->
+      <p class="deck-status" aria-role="status">
+        <span class="deck-status-current"></span>
+        /
+        <span class="deck-status-total"></span>
+      </p>
+
+      <!-- deck.goto snippet -->
+      <form action="." method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+      </form>
+
+      <!-- End extension snippets. -->
+    </div>
+
+    <!-- Required JS files. -->
+    <script src="js/deck.js/jquery.min.js"></script>
+    <script src="js/deck.js/core/deck.core.js"></script>
+
+    <!-- Extension JS files. Add or remove as needed. -->
+    <script src="js/deck.js/extensions/menu/deck.menu.js"></script>
+    <script src="js/deck.js/extensions/goto/deck.goto.js"></script>
+    <script src="js/deck.js/extensions/status/deck.status.js"></script>
+    <script src="js/deck.js/extensions/navigation/deck.navigation.js"></script>
+    <script src="js/deck.js/extensions/scale/deck.scale.js"></script>
+
+    <!-- Initialize the deck. You can put this in an external file if desired. -->
+    <script>
+     $(function() {
+       $.deck('.slide');
+     });
+    </script>
+  </body>
+</html>

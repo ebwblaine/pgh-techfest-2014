@@ -1,0 +1,18 @@
+<pre><tt><b><font color="#000080">&lt;!DOCTYPE</font></b> <font color="#009900">html</font><b><font color="#000080">&gt;</font></b>
+<b><font color="#0000FF">&lt;div</font></b> <font color="#009900">id</font><font color="#990000">=</font><font color="#FF0000">"example1"</font><b><font color="#0000FF">&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1c<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+    <i><font color="#9A1900">// find our specific example1 div</font></i>
+    <b><font color="#0000FF">var</font></b> example1_div<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"#example1"</font><font color="#990000">);</font> 
+    <i><font color="#9A1900">// make it's background lighter</font></i>
+    example1_div
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"background-color"</font><font color="#990000">,</font> <font color="#FF0000">"#AAAAAA"</font><font color="#990000">);</font>
+    <i><font color="#9A1900">// select all of the paragraph elements</font></i>
+    <i><font color="#9A1900">// and set them to be color white</font></i>
+    example1_div<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"white"</font><font color="#990000">);</font>
+<b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/div&gt;</font></b>
+</tt></pre>

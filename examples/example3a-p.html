@@ -1,0 +1,25 @@
+<pre><tt><b><font color="#000080">&lt;!DOCTYPE</font></b> <font color="#009900">html</font><b><font color="#000080">&gt;</font></b>
+<b><font color="#0000FF">&lt;div</font></b> <font color="#009900">id</font><font color="#990000">=</font><font color="#FF0000">"example3"</font><b><font color="#0000FF">&gt;</font></b>
+  <b><font color="#0000FF">&lt;button</font></b> <font color="#009900">id</font><font color="#990000">=</font><font color="#FF0000">"button1"</font> 
+          <font color="#009900">onclick</font><font color="#990000">=</font><font color="#FF0000">"button1_click()"</font><b><font color="#0000FF">&gt;</font></b>
+    Do It!<b><font color="#0000FF">&lt;/button&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 3a<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">button1_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+
+     <b><font color="#0000FF">var</font></b> family_names <font color="#990000">=</font> 
+     <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font> <font color="#FF0000">"Jesse"</font><font color="#990000">,</font> <font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">];</font>
+
+     <b><font color="#0000FF">var</font></b> example3_div<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"#example3"</font><font color="#990000">);</font>
+ 
+     <b><font color="#0000FF">var</font></b> para <font color="#990000">=</font> example3_div<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+                            <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>family_names<font color="#990000">);</font>
+     para<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">()</font>
+         <font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d <font color="#FF0000">}</font><font color="#990000">);</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+<b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/div&gt;</font></b>
+</tt></pre>
