@@ -16,7 +16,6 @@
     <link rel="stylesheet" media="screen" href="js/deck.js/extensions/navigation/deck.navigation.css">
     <link rel="stylesheet" media="screen" href="js/deck.js/extensions/status/deck.status.css">
     <link rel="stylesheet" media="screen" href="js/deck.js/extensions/scale/deck.scale.css">
-    <link href="js/prism.css" rel="stylesheet" />
 
     <!-- Style theme. More available in /themes/style/ or create your own. -->
     <link rel="stylesheet" media="screen" href="js/deck.js/themes/style/web-2.0.css">
@@ -29,12 +28,9 @@
 
     <!-- Required Modernizr file -->
     <script src="js/deck.js/modernizr.custom.js"></script>
-    <script src="js/prism.js"></script>
   </head>
   <body>
     <div class="deck-container">
-
-      <!-- Begin slides. Just make elements with a class of slide. -->
 
       <section class="slide">
         <h1>Introduction to D3.js</h1>
@@ -78,15 +74,11 @@
         <h2>Today's Topics</h2>
         <ul>
           <li>Selections</li>
-          <ul>
-            <li>CSS Selections</li>
-            <li>JS Selections</li>
-            <li>D3 Selections</li>
-          </ul>
-          <li>Transitions</li>
+          <li>Properties</li>
           <li>Data</li>
-          <li>Binding</li>
+          <li>SVG</li>
           <li>Plugins</li>
+          <li>Everything Else!</li>
         </ul>
       </section>
 
@@ -104,11 +96,14 @@
       <section class="slide">
         <h2>Selections</h2>
         <h3>Data-Driven <em>Documents</em></h3>
+        <p>Let's review selections in 
+          <ul>
+            <li>CSS</li><li>JS</li><li>D3</li></ul></p>
       </section>
 
       <section class="slide">
         <h2>Selections - CSS</h2>
-        <iframe src="examples/example1a.html" width="95%" height="70%"></iframe>
+        <iframe src="examples/example1a.html" width="95%"></iframe>
         <pre width="95%"><iframe 
           src="examples/example1a-p.html" 
           height="570" width="100%" 
@@ -118,7 +113,7 @@
 
       <section class="slide">
         <h2>Selections - JS</h2>
-        <iframe src="examples/example1b.html" width="80%" height="300"></iframe>
+        <iframe src="examples/example1b.html" width="80%"></iframe>
         <pre width="95%"><iframe 
           src="examples/example1b-p.html" 
           height="400" width="100%"
@@ -128,7 +123,7 @@
 
       <section class="slide">
         <h2>Selections - D3</h2>
-        <iframe src="examples/example1c.html" width="80%" height="70%"></iframe>
+        <iframe src="examples/example1c.html" width="80%" ></iframe>
         <pre width="95%"><iframe 
           src="examples/example1c-p.html" 
           height="400" width="100%"
@@ -136,34 +131,123 @@
         </iframe></pre>
       </section>
 
-      <section class="slide" >
-        <h2>transitions</h2>
-        <h3>example 2a</h3>
-        <iframe src="examples/example2a.html" 
+      <section class="slide">
+        <h2>Selections - D3</h2>
+
+        <iframe src="examples/example1d.html" 
                 style="float:left;width:30%;" 
                 height="300" scrolling="no"></iframe>
         <pre 
           style="margin-bottom:0;float:right;width:55%"><iframe 
-          src="examples/example2a-p.html" 
+          src="examples/example1d-p.html" 
           style="align:left;" 
-          height="550" width="100%" scrolling="auto"></iframe></pre>
+          height="475" width="100%" scrolling="auto"></iframe></pre>
         <br clear="all"/>
-        <br/>
-        <p><a href="http://bost.ocks.org/mike/transition/">http://bost.ocks.org/mike/transition</a></p>
+        <br/><p>The D3 code is the same, only the document changed.</p>
+      </section>
+
+
+      <section class="slide" >
+        <h2>Properties</h2>
+        <h3>Data-Driven <em>Documents</em></h3>
+        <p>D3 supports static dynamic properties on DOM elements</p>
+        <pre>body.selectAll("p")
+    .style("color", "#AAAAAA");</pre>
+
+        <pre>body.selectAll("p")
+    .style("color", function(d, i) {
+       return "hsl(" + Math.random() * 360 + ",100%,50%)";
+    });</pre>
+        <p>Both Valid</p>
+
       </section>
 
       <section class="slide" >
-        <h3><em>Data</em>-Driven Documents</h3>
-        <h3>example 3a</h3>
+        <h2>Properties</h2>
+        <iframe src="examples/example2a.html" width="95%" height="200"></iframe>
+        <pre width="95%"><iframe 
+          src="examples/example2a-p.html" 
+          height="570" width="100%" 
+          scrolling="auto">
+        </iframe></pre>
+        <br clear="all"/>
+        <br/>
+        <p>Debug this example to see the elements changed live<br/>
+          <a href="http://d3js.org/#properties">http://d3js.org/#properties</a></p>
       </section>
+
       <section class="slide" >
-        <h2>data</h2>
+        <h2>Data</h2>
+        <h3><em>Data</em>-Driven Documents</h3>
+        <br/>
+        <p>D3 joins data elements to dom elements with the <em>data</em> function. This is easiest to understand with an example</p>
+        <pre>var home = 
+    ["Walter","Skyler", 
+     "Hank", "Marie"];
+var para =
+    body.selectAll("p").data(names);</pre>
+        <p>This has no direct effect.  This call to <em>data</em> tells D3 that you want paragraph elements in the document body to be associated with the names in the array.  This creates selections that can be manipulated.</p>
+      </section>
+
+      <section class="slide" >
+        <h2>Data</h2>
+        <p>A D3 data join creates three selections  
+        <ul>
+          <li>Enter - representing arriving data elements</li>
+          <li>Update - representing existing data elements </li>
+          <li>Exit - representing departing data elements</li>
+        </ul>
+      </section>
+
+      <section class="slide" >
+        <h2>Data - Enter</h2>
+        <p>Add a paragraph element for each new data item</p>
+        <pre>var home = 
+    ["Walter","Skyler", 
+     "Hank", "Marie"];
+
+var para =
+    body.selectAll("p").data(names);
+
+para.enter().append("p"); // enter 
+      </section>
+
+      <section class="slide" >
+        <h2>Data - Update</h2>
+        <p>Set the paragraph text to the data item value<br/>
+          (note the use of a function of the data item as the value)</p>
+        <pre>var home = 
+    ["Walter","Skyler", 
+     "Hank", "Marie"];
+
+var para =
+    body.selectAll("p").data(names);
+
+// update
+para.text 
+     (function(d) { return d; });
+
+      </section>
+
+      <section class="slide" >
+        <h2>Data - Exit</h2>
+        <p>Remove the paragraph item for removed data items</p>
+        <pre>var home = 
+    ["Walter","Skyler", 
+     "Hank", "Marie"];
+
+var para =
+    body.selectAll("p").data(names);
+
+para.exit().remove(); // exit</pre>
+      </section>
+
+
+      <section class="slide" >
+        <h2>Data - Putting it together</h2>
         <h3>example 3a</h3>
-        <iframe src="examples/example3a.html" 
-                style="float:left;width:30%;" 
-                height="300" scrolling="no"></iframe>
         <pre 
-          style="margin-bottom:0;float:right;width:55%"><iframe 
+          style="margin-bottom:0"><span class="inner-pre" style="font-size: 2em"><iframe 
           src="examples/example3a-p.html" 
           style="align:left;" 
           height="550" width="100%" scrolling="auto"></iframe></pre>
@@ -172,60 +256,80 @@
         <p><a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
       </section>
 
-      <section class="slide">
-        <h2>Data</h2>
-        <h3><em>Data</em>-Driven Documents</h3>
-        <a href="http://bost.ocks.org/mike/d3/workshop/#48">More Information</a>
+      <section class="slide" >
+        <h2>Data - Putting it together</h2>
+        <h3>example 3a</h3>
+        <iframe src="examples/example3a.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <p>
+          <br clear="all"/><br/>
+          <a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
       </section>
 
-      <section class="slide">
-        <h2>General Update Pattern </h2>
-        <h3>NEW EXAMPLE!</h3>
-        <h3>in-script data</h3>
-        <a href="http://bost.ocks.org/mike/d3/workshop/#48">More Information</a>
+      <section class="slide" >
+        <h2>Data - Changing Data</h2>
+        <h3>example 3b</h3>
+        <pre 
+          style="margin-bottom:0"><span class="inner-pre" style="font-size: 2em"><iframe 
+          src="examples/example3b-p.html" 
+          style="align:left;" 
+          height="550" width="100%" scrolling="auto"></iframe></pre>
+        <br clear="all"/>
+        <br/>
+        <p><a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
       </section>
 
-      <section class="slide">
-        <h2>Key Functions</h2>
-        <h3>in-script data</h3>
+      <section class="slide" >
+        <h2>Data - Changing Data</h2>
+        <h3>example 3b</h3>
+        <iframe src="examples/example3b.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <p>
+          <br clear="all"/><br/>
+          <a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
       </section>
 
 
       <section class="slide">
-        <h2>JSON</h2>
-        <h3>general update pattern + json</h3>
-        <p> example 2, 2a, 2b</p>
+        <h2>SVG</h2>
+        <h3>Static SVG Reminder</h3>
+        <iframe src="examples/example4a1.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <pre 
+          style="margin-bottom:0;float:right;width:55%"><iframe 
+          src="examples/example4a1-p.html" 
+          style="align:left;" 
+          height="475" width="100%" scrolling="auto"></iframe></pre>
+      </section>
+
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Dynamic SVG with text</h3>
+        <iframe src="examples/example4a.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <pre 
+          style="margin-bottom:0;float:right;width:55%"><iframe 
+          src="examples/example4a-p.html" 
+          style="align:left;" 
+          height="475" width="100%" scrolling="auto"></iframe></pre>
       </section>
 
       <section class="slide">
         <h2>SVG</h2>
-        <h3>quick svg overview</h3>
-        <p> svg structure</p>
-        http://bost.ocks.org/mike/bar/2/
-      </section>
-
-      <section class="slide">
-        <h2>SVG example</h2>
-        <h3>static svg in html code</h3>
-      </section>
-
-      <section class="slide">
-        <h2>Our text example ported to SVG</h2>
-        <h3>example 3</h3>
-      </section>
-
-      <section class="slide">
-        <h2>Taking advantage of SVG transformations & mouse events</h2>
-        <h3>example 3a</h3>
-      </section>
-
-      <section class="slide">
-        <h2>Now with actual images</h2>
-        <h3>example 3b</h3>
-      </section>
-
-      <section class="slide">
-        <h2>bar chart example, maybe svg</h2>
+        <h3>Dynamic SVG with graphics</h3>
+        <iframe src="examples/example4b.html" 
+                style="float:left;width:30%;" 
+                height="300" scrolling="no"></iframe>
+        <pre 
+          style="margin-bottom:0;float:right;width:55%"><iframe 
+          src="examples/example4b-p.html" 
+          style="align:left;" 
+          height="475" width="100%" scrolling="auto"></iframe></pre>
       </section>
 
       <section class="slide">
@@ -245,6 +349,8 @@
           Geography - project spherical coordinates, latitude & longitude math
           Geometry - utilities for 2D geometry, such as Voronoi diagrams and quadtrees
         </p>
+      </section>
+
       <section class="slide">
         <h2>more information</h2>
       </section>
@@ -257,8 +363,6 @@
         <h2>references and tools</h2>
         http://hilite.me/
       </section>
-
-
 
 
       <!-- End slides. -->

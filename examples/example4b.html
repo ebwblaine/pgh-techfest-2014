@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script type="text/javascript" src="js/d3.v3.min.js"></script>
+<style type="text/css">
+ body
+ {
+   background-color:#CCCCCC;
+ }
+ 
+ p
+ {
+   line-height:55%;
+ }
+</style>
+</head>
+
+<body>
+  <button id="button1" onclick="button1_click()">HOME</button>
+  <button id="reset" onclick="reset_click()">RESET!</button>
+  <h2>Example 3a</h2>
+  <script type="text/javascript">
+
+   var home = ["Walter","Skyler", "Hank", "Marie"];
+   
+   // append an SVG element
+   var svg = d3.select("body")
+               .append("svg")
+               .attr("width", 300)
+               .attr("height", 300)
+               .style("background-color", "#999999");
+
+
+   function update(names){
+     var body=d3.select("body");
+
+     // bind our data to SVG Text elements
+     var node = svg.selectAll("g.node").data(names);
+
+
+     // enter
+
+     enterNode = node.enter()
+                     .append("svg:g")
+                     .attr("class", "node");
+     
+     enterNode.append("circle")
+         .attr("cx", 10)
+         .attr("cy", function(d, i) { return (i + 1) *25;}) // based on index
+         .attr("r", 10);
+     
+     enterNode.append("svg:text")
+         .attr("dx", 12)
+         .attr("dy",  function(d, i) { return (i + 1) *25;})
+         .text(function(d){return d;});
+
+     // update
+     node.selectAll("circle")
+         .style("fill", function(d, i) {return "hsl(" + Math.random() * 360 + ",100%,50%)"});
+
+     // update
+     node.selectAll("text")
+         .style("fill", function(d, i) {return "hsl(" + Math.random() * 360 + ",100%,50%)"});
+
+     node.exit().remove(); // exit
+   };
+
+   function button1_click() {
+     update(home);
+   }
+   
+   function reset_click() {
+     update([]);
+   };
+  </script>
+</body>
+</html>

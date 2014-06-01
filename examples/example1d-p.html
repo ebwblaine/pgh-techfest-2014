@@ -1,0 +1,24 @@
+<pre><tt><b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1d<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>Hello D3 Again!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  <b><font color="#0000FF">&lt;p&gt;</font></b>And again!<b><font color="#0000FF">&lt;/p&gt;</font></b>
+  
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+   
+    <i><font color="#9A1900">// find the body</font></i>
+    <b><font color="#0000FF">var</font></b> body <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+
+    <i><font color="#9A1900">// make the background lighter</font></i>
+    body<font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"background-color"</font><font color="#990000">,</font> <font color="#FF0000">"#CCCCCC"</font><font color="#990000">);</font>
+
+    <i><font color="#9A1900">// select all of the paragraph elements</font></i>
+    <i><font color="#9A1900">// and set them to be color white</font></i>
+    body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font>
+
+<b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/div&gt;</font></b>
+
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+</tt></pre>

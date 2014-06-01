@@ -24,16 +24,29 @@
   <script type="text/javascript">
 
    var home = ["Walter","Skyler", "Hank", "Marie"];
+   
+   // append an SVG element
+   var svg = d3.select("body")
+               .append("svg")
+               .attr("width", 300)
+               .attr("height", 300)
+               .style("background-color", "#999999");
 
    function update(names){
      var body=d3.select("body");
      
-     var para = body.selectAll("p")
-                    .data(names);
-     
-     para.enter().append("p"); // enter 
-     para.text(function(d) { return d; }); // update
-     para.exit().remove(); // exit
+     // bind our data to SVG Text elements
+     var text = svg.selectAll("text").data(names);
+
+     text.enter()
+         .append("text") // create the text element
+         .attr("x", 10) // set the x as constant
+         .attr("y", function(d, i) { return (i + 1) *25;}) // based on index
+         .style("font-size", "18") 
+         .style("fill", "blue");
+
+     text.text(function(d){return d;});
+     text.exit().remove(); // exit
    };
 
    function button1_click() {
