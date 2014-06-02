@@ -45,7 +45,7 @@
       </section>
 
       <section class="slide">
-        <h2>About Eric Werner</h2>
+        <h2>About Eric Blaine Werner</h2>
         <img align="right" src="images/ebw_from_below_effects.jpg"/>
         <h3><a href="https://twitter.com/ebwinpgh">@ebwinpgh</a></h3>
         <p>Technical Director<br/>
@@ -61,7 +61,7 @@
       <section class="slide">
         <h2>Running Examples</h2>
         <p>Some d3 examples (json) require an http server</p>
-        <pre>     ~ $ cd examples
+        <pre width="80%">     ~ $ cd examples
      ~/examples $ python -m SimpleHTTPServer
      Serving HTTP on 0.0.0.0 port 8000 ...</pre>
         <img src="images/example1.png" align="center"/>
@@ -93,34 +93,66 @@
       </section>
 
       <section class="slide">
+        <h3>Basic Charts</h3>
         <h2>About D3.js </h2>
-        <img src="images/basic-charts.png">
+        <img src="images/basic-charts1.png">
 
       </section>
       <section class="slide">
         <h2>About D3.js </h2>
-        <h3>More Charts</h3>
-        <img src="images/other-charts1.png" align="left"/>
-      </section>
+        <h3>Basic Charts</h3>
+        <img src="images/basic-charts2.png">
 
-      <section class="slide">
-        <h2>About D3.js </h2>
-        <h3>More Charts</h3>
-        <img src="images/other-charts2.png" align="left"/>
       </section>
 
       <section class="slide">
         <h2>About D3.js </h2>
         <h3>More Charts</h3>
-        <img src="images/other-charts3.png" />
+        <img src="images/other-charts1a.png"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts1b.png"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts2a.png"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts2b.png"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts3a.png"/>
+      </section>
+
+      <section class="slide">
+        <h2>About D3.js </h2>
+        <h3>More Charts</h3>
+        <img src="images/other-charts3b.png"/>
+      </section>
+
+      <section class="slide">
+        <h2>D3 is very powerful </h2>
       </section>
 
       <section class="slide">
         <h2>Declarative Programming</h2>
         <pre><p>In computer science, declarative programming is a programming paradigm, a style of building the structure and elements of computer programs, that expresses the logic of a computation without describing its control flow.</p>
 - Wikipedia article on <a href="http://en.wikipedia.org/wiki/Declarative_programming">Declarative Programming</a></pre>
+        
+        <p>Assert to the computer <font color="#0000FF">what to do</font> 
+          <em>not</em> <font color="#FF0000">how to do it</font>.
       </section>
-
 
       <section class="slide">
         <h2>Selections</h2>
@@ -217,9 +249,9 @@
 
       <section class="slide">
         <h2>Selections - D3</h2>
-        <h3>D3 did something tricky there</h3>
         <pre>body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font> </pre>
+        <h3>D3's declarative nature allows it to manage selections of multiple items instead of requiring explicit loops. </h3>
        </section>
 
       <section class="slide">
@@ -256,7 +288,6 @@
 
      <section class="slide">
         <h2>Selections - D3</h2>
-
         <iframe src="examples/example1d.html" width="80%" height="220"></iframe>
         <br/><p>The D3 code is the same, only the document changed.</p>
       </section>
@@ -268,6 +299,54 @@
         <pre>body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font> </pre>
        </section>
+
+      <section class="slide">
+        <h2>Selections - D3</h2>
+        <p>When using D3, you don't write loops, you declare what you want against <em>selections</em></p>
+        <pre>body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+       <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font> </pre>
+        <p>We can also add elements to selections.</p>
+       </section>
+
+      <section class="slide">
+        <h2>Selections - D3</h2>
+        <p>Consider the following:</p>
+        <pre>
+<b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 1e<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+   
+   <i><font color="#9A1900">// find the body</font></i>
+   <b><font color="#0000FF">var</font></b> body <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+   
+   <i><font color="#9A1900">// make the background lighter</font></i>
+   body<font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"background-color"</font><font color="#990000">,</font> <font color="#FF0000">"#CCCCCC"</font><font color="#990000">);</font>
+   
+   <i><font color="#9A1900">// add a new paragraph element</font></i>
+   body<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><font color="#FF0000">"Hello D3 (added dynamically!)"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"color"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font>
+   
+  <b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/div&gt;</font></b>
+
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+</pre>
+        <p>Note the lack of paragraph elements in the static html.</p>
+       </section>
+
+
+     <section class="slide">
+        <h2>Selections - D3</h2>
+        <iframe src="examples/example1e.html" width="80%" height="120"></iframe>
+        <br/><p>The paragraph element was added dynamically.</p>
+        <pre><i><font color="#9A1900">// add a new paragraph element</font></i>
+   body<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+       <font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><font color="#FF0000">"Hello D3 (added dynamically!)"</font><font color="#990000">)</font></pre>
+
+      </section>
+
 
 
       <section class="slide" >
@@ -336,87 +415,128 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
         <p>A D3 data join creates three selections  
         <ul>
           <li>Enter - representing arriving data elements</li>
-          <li>Update - representing existing data elements </li>
           <li>Exit - representing departing data elements</li>
+          <li>Update - representing existing data elements </li>
         </ul>
+        </p>
       </section>
 
       <section class="slide" >
         <h2>Data - Enter</h2>
         <p>Add a paragraph element for each new data item</p>
-        <pre>var home = 
-    ["Walter","Skyler", 
-     "Hank", "Marie"];
+        <pre>
+   <b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+     
+     <b><font color="#0000FF">var</font></b> para <font color="#990000">=</font> body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+                    <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
+     
+     para<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">().</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">);</font> <i><font color="#9A1900">// enter </font></i>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+        </pre>
+      </section>
 
-var para =
-    body.selectAll("p").data(names);
-
-para.enter().append("p"); // enter 
+      <section class="slide" >
+        <h2>Data - Exit</h2>
+        <p>Remove the paragraph item for removed data items</p>
+        <pre>
+   <b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+     
+     <b><font color="#0000FF">var</font></b> para <font color="#990000">=</font> body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+                    <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
+     
+     para<font color="#990000">.</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font> <i><font color="#9A1900">// exit</font></i>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+        </pre>
       </section>
 
       <section class="slide" >
         <h2>Data - Update</h2>
         <p>Set the paragraph text to the data item value<br/>
           (note the use of a function of the data item as the value)</p>
-        <pre>var home = 
-    ["Walter","Skyler", 
-     "Hank", "Marie"];
-
-var para =
-    body.selectAll("p").data(names);
-
-// update
-para.text 
-     (function(d) { return d; });
-
+        <pre>
+   <b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+     
+     <b><font color="#0000FF">var</font></b> para <font color="#990000">=</font> body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+                    <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
+     
+     para<font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d<font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font> <i><font color="#9A1900">// update</font></i>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+        </pre>
       </section>
-
-      <section class="slide" >
-        <h2>Data - Exit</h2>
-        <p>Remove the paragraph item for removed data items</p>
-        <pre>var home = 
-    ["Walter","Skyler", 
-     "Hank", "Marie"];
-
-var para =
-    body.selectAll("p").data(names);
-
-para.exit().remove(); // exit</pre>
-      </section>
-
 
       <section class="slide" >
         <h2>Data - Putting it together</h2>
         <h3>example 3a</h3>
-        <pre 
-          style="margin-bottom:0"><span class="inner-pre" style="font-size: 2em"><iframe 
-          src="examples/example3a-p.html" 
-          style="align:left;" 
-          height="550" width="100%" scrolling="auto"></iframe></pre>
+        <pre><tt><b><b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+   <b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">update</font></b><font color="#990000">(</font>names<font color="#990000">)</font><font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font>
+     
+     <b><font color="#0000FF">var</font></b> para <font color="#990000">=</font> body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+                    <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
+     
+     para<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">().</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">);</font> <i><font color="#9A1900">// enter </font></i>
+     para<font color="#990000">.</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font> <i><font color="#9A1900">// exit</font></i>
+     para<font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d<font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font> <i><font color="#9A1900">// update</font></i>
+
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">button1_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#000000">update</font></b><font color="#990000">(</font>home<font color="#990000">);</font>
+   <font color="#FF0000">}</font>
+   
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">reset_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+     body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">).</font><b><font color="#000000">data</font></b><font color="#990000">([]).</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+  <b><font color="#0000FF">&lt;/script&gt;</font></b>
+</tt></pre>
         <br clear="all"/>
         <br/>
         <p><a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
+        </b></section>
       </section>
 
       <section class="slide" >
         <h2>Data - Putting it together</h2>
         <h3>example 3a</h3>
         <iframe src="examples/example3a.html" 
-                style="float:left;width:30%;" 
                 height="300" scrolling="no"></iframe>
         <p>
-          <br clear="all"/><br/>
           <a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
       </section>
 
       <section class="slide" >
         <h2>Data - Changing Data</h2>
         <h3>example 3b</h3>
-        <pre 
-          style="margin-bottom:0"><span class="inner-pre" style="font-size: 2em"><iframe 
-          src="examples/example3b-p.html" 
-          style="align:left;" 
-          height="550" width="100%" scrolling="auto"></iframe></pre>
+        <pre>   <b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+   <b><font color="#0000FF">var</font></b> work <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font> <font color="#FF0000">"Jessie"</font><font color="#990000">,</font> <font color="#FF0000">"Saul"</font><font color="#990000">,</font> <font color="#FF0000">"Gustavo"</font><font color="#990000">,</font> <font color="#FF0000">"Mike"</font><font color="#990000">];</font>
+      
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">update</font></b><font color="#990000">(</font>names<font color="#990000">)</font><font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font>
+     
+     <b><font color="#0000FF">var</font></b> para <font color="#990000">=</font> body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">)</font>
+                    <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
+     
+     para<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">().</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">);</font> <i><font color="#9A1900">// enter </font></i>
+     para<font color="#990000">.</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font> <i><font color="#9A1900">// exit</font></i>
+     para<font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d<font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font> <i><font color="#9A1900">// update</font></i>
+
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+   
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">button1_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#000000">update</font></b><font color="#990000">(</font>home<font color="#990000">);</font>
+   <font color="#FF0000">}</font>
+   
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">button2_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#000000">update</font></b><font color="#990000">(</font>work<font color="#990000">);</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">reset_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font> 
+     body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"p"</font><font color="#990000">).</font><b><font color="#000000">data</font></b><font color="#990000">([]).</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font></tt></pre>
         <br clear="all"/>
         <br/>
         <p><a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
@@ -435,98 +555,226 @@ para.exit().remove(); // exit</pre>
 
 
       <section class="slide">
+        <h2>Scalable Vector Graphics</h2>
+        <pre><p>Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation</p>
+- Wikipedia article on <a href="http://en.wikipedia.org/wiki/Svg">SVG</a></pre>
+        
+        <p>SVGs are hierarchical.  Individual elements can have their own style annotations and even motion transformation annotations.</p>
+      </section>
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Let's build an SVG</h3>
+      </section>
+
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Static SVG Reminder</h3>
+        <pre><tt><b><font color="#0000FF">&lt;svg</font></b> <font color="#009900">width</font><font color="#990000">=</font><font color="#FF0000">"300"</font> <font color="#009900">height</font><font color="#990000">=</font><font color="#FF0000">"300"</font> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"background-color: rgb(153, 153, 153)"</font><b><font color="#0000FF">&gt;</font></b>
+  <b><font color="#0000FF">&lt;g</font></b> <font color="#009900">class</font><font color="#990000">=</font><font color="#FF0000">"node"</font><b><font color="#0000FF">&gt;</font></b>
+    <b><font color="#0000FF">&lt;rect</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(0, 0, 0);"</font> <font color="#009900">width</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">height</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">y</font><font color="#990000">=</font><font color="#FF0000">"25"</font> <font color="#009900">x</font><font color="#990000">=</font><font color="#FF0000">"10"</font><b><font color="#0000FF">&gt;&lt;/rect&gt;</font></b>
+    <b><font color="#0000FF">&lt;text</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(0, 0, 0);"</font> <font color="#009900">dy</font><font color="#990000">=</font><font color="#FF0000">"25"</font> <font color="#009900">dx</font><font color="#990000">=</font><font color="#FF0000">"12"</font><b><font color="#0000FF">&gt;</font></b>Walter<b><font color="#0000FF">&lt;/text&gt;</font></b>
+  <b><font color="#0000FF">&lt;/g&gt;</font></b>
+  <b><font color="#0000FF">&lt;g</font></b> <font color="#009900">class</font><font color="#990000">=</font><font color="#FF0000">"node"</font><b><font color="#0000FF">&gt;</font></b>
+    <b><font color="#0000FF">&lt;rect</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(0, 255, 0);"</font> <font color="#009900">width</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">height</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">y</font><font color="#990000">=</font><font color="#FF0000">"50"</font> <font color="#009900">x</font><font color="#990000">=</font><font color="#FF0000">"10"</font><b><font color="#0000FF">&gt;&lt;/rect&gt;</font></b>
+    <b><font color="#0000FF">&lt;text</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(0, 255, 0);"</font> <font color="#009900">dy</font><font color="#990000">=</font><font color="#FF0000">"50"</font> <font color="#009900">dx</font><font color="#990000">=</font><font color="#FF0000">"12"</font><b><font color="#0000FF">&gt;</font></b>Skyler<b><font color="#0000FF">&lt;/text&gt;</font></b>
+  <b><font color="#0000FF">&lt;/g&gt;</font></b>
+  <b><font color="#0000FF">&lt;g</font></b> <font color="#009900">class</font><font color="#990000">=</font><font color="#FF0000">"node"</font><b><font color="#0000FF">&gt;</font></b>
+    <b><font color="#0000FF">&lt;rect</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(0, 0, 255);"</font> <font color="#009900">width</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">height</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">y</font><font color="#990000">=</font><font color="#FF0000">"75"</font> <font color="#009900">x</font><font color="#990000">=</font><font color="#FF0000">"10"</font><b><font color="#0000FF">&gt;&lt;/rect&gt;</font></b>
+    <b><font color="#0000FF">&lt;text</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(0, 0, 255);"</font> <font color="#009900">dy</font><font color="#990000">=</font><font color="#FF0000">"75"</font> <font color="#009900">dx</font><font color="#990000">=</font><font color="#FF0000">"12"</font><b><font color="#0000FF">&gt;</font></b>Hank<b><font color="#0000FF">&lt;/text&gt;</font></b>
+  <b><font color="#0000FF">&lt;/g&gt;</font></b>
+  <b><font color="#0000FF">&lt;g</font></b> <font color="#009900">class</font><font color="#990000">=</font><font color="#FF0000">"node"</font><b><font color="#0000FF">&gt;</font></b>
+    <b><font color="#0000FF">&lt;rect</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(255, 0, 255);"</font> <font color="#009900">width</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">height</font><font color="#990000">=</font><font color="#FF0000">"10"</font> <font color="#009900">y</font><font color="#990000">=</font><font color="#FF0000">"100"</font> <font color="#009900">x</font><font color="#990000">=</font><font color="#FF0000">"10"</font><b><font color="#0000FF">&gt;&lt;/rect&gt;</font></b>
+    <b><font color="#0000FF">&lt;text</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(255, 0, 255);"</font> <font color="#009900">dy</font><font color="#990000">=</font><font color="#FF0000">"100"</font> <font color="#009900">dx</font><font color="#990000">=</font><font color="#FF0000">"12"</font><b><font color="#0000FF">&gt;</font></b>Marie<b><font color="#0000FF">&lt;/text&gt;</font></b>
+  <b><font color="#0000FF">&lt;/g&gt;</font></b>
+  <b><font color="#0000FF">&lt;/svg&gt;</font></b></tt>          </pre>
+      </section>
+
+      <section class="slide">
         <h2>SVG</h2>
         <h3>Static SVG Reminder</h3>
         <iframe src="examples/example4a1.html" 
-                style="float:left;width:30%;" 
                 height="300" scrolling="no"></iframe>
-        <pre 
-          style="margin-bottom:0;float:right;width:55%"><iframe 
-          src="examples/example4a1-p.html" 
-          style="align:left;" 
-          height="475" width="100%" scrolling="auto"></iframe></pre>
       </section>
+        
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Dynamic SVG with text</h3>
+        <pre><tt><b><b><font color="#0000FF">function</font></b> <b><font color="#000000">update</font></b><font color="#990000">(</font>names<font color="#990000">)</font><font color="#FF0000">{</font>
+     <b><font color="#0000FF">var</font></b> body<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font>
+     
+     <i><font color="#9A1900">// bind our data to SVG Text elements</font></i>
+     <b><font color="#0000FF">var</font></b> text <font color="#990000">=</font> svg<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"text"</font><font color="#990000">).</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
 
+     text<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">()</font>
+         <font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"text"</font><font color="#990000">)</font> <i><font color="#9A1900">// create the text element</font></i>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"x"</font><font color="#990000">,</font> <font color="#993399">10</font><font color="#990000">)</font> <i><font color="#9A1900">// set the x as constant</font></i>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"y"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> <font color="#990000">(</font>i <font color="#990000">+</font> <font color="#993399">1</font><font color="#990000">)</font> <font color="#990000">*</font><font color="#993399">25</font><font color="#990000">;</font><font color="#FF0000">}</font><font color="#990000">)</font> <i><font color="#9A1900">// based on index</font></i>
+         <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"font-size"</font><font color="#990000">,</font> <font color="#FF0000">"18"</font><font color="#990000">)</font> 
+         <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"fill"</font><font color="#990000">,</font> <font color="#FF0000">"blue"</font><font color="#990000">);</font>
+
+     text<font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">)</font><font color="#FF0000">{</font><b><font color="#0000FF">return</font></b> d<font color="#990000">;</font><font color="#FF0000">}</font><font color="#990000">);</font>
+     text<font color="#990000">.</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font> <i><font color="#9A1900">// exit</font></i>
+   <font color="#FF0000">}</font><font color="#990000">;</font>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">button1_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+     <b><font color="#000000">update</font></b><font color="#990000">(</font>home<font color="#990000">);</font>
+   <font color="#FF0000">}</font>
+   
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">reset_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
+   <b><font color="#000000">update</font></b><font color="#990000">([]);</font>
+   <font color="#FF0000">}</font><font color="#990000">;</font> </b></tt></pre>
+
+
+      </section>
 
       <section class="slide">
         <h2>SVG</h2>
         <h3>Dynamic SVG with text</h3>
         <iframe src="examples/example4a.html" 
-                style="float:left;width:30%;" 
                 height="300" scrolling="no"></iframe>
-        <pre 
-          style="margin-bottom:0;float:right;width:55%"><iframe 
-          src="examples/example4a-p.html" 
-          style="align:left;" 
-          height="475" width="100%" scrolling="auto"></iframe></pre>
       </section>
 
       <section class="slide">
         <h2>SVG</h2>
         <h3>Dynamic SVG with graphics</h3>
+        <pre><i><font color="#9A1900">// bind our data to SVG Text elements</font></i>
+     <b><font color="#0000FF">var</font></b> node <font color="#990000">=</font> svg<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"g.node"</font><font color="#990000">).</font><b><font color="#000000">data</font></b><font color="#990000">(</font>names<font color="#990000">);</font>
+     <i><font color="#9A1900">// enter</font></i>
+     enterNode <font color="#990000">=</font> node<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">()</font>
+                     <font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"svg:g"</font><font color="#990000">)</font>
+                     <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"class"</font><font color="#990000">,</font> <font color="#FF0000">"node"</font><font color="#990000">);</font>
+     
+     enterNode<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"rect"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"x"</font><font color="#990000">,</font> <font color="#993399">10</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"y"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> <font color="#990000">(</font>i <font color="#990000">+</font> <font color="#993399">1</font><font color="#990000">)</font> <font color="#990000">*</font><font color="#993399">25</font><font color="#990000">;</font><font color="#FF0000">}</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"height"</font><font color="#990000">,</font> <font color="#993399">10</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"width"</font><font color="#990000">,</font> <font color="#993399">10</font><font color="#990000">);</font>
+     
+     enterNode<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"svg:text"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"dx"</font><font color="#990000">,</font> <font color="#993399">12</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"dy"</font><font color="#990000">,</font>  <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> <font color="#990000">(</font>i <font color="#990000">+</font> <font color="#993399">1</font><font color="#990000">)</font> <font color="#990000">*</font><font color="#993399">25</font><font color="#990000">;</font><font color="#FF0000">}</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">)</font><font color="#FF0000">{</font><b><font color="#0000FF">return</font></b> d<font color="#990000">;</font><font color="#FF0000">}</font><font color="#990000">);</font>
+
+     <i><font color="#9A1900">// update</font></i>
+     node<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"rect"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"fill"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font><b><font color="#0000FF">return</font></b> <font color="#FF0000">"hsl("</font> <font color="#990000">+</font> Math<font color="#990000">.</font><b><font color="#000000">random</font></b><font color="#990000">()</font> <font color="#990000">*</font> 
+         <font color="#993399">360</font> <font color="#990000">+</font> <font color="#FF0000">",100%,50%)"</font><font color="#FF0000">}</font><font color="#990000">);</font>
+
+     <i><font color="#9A1900">// update</font></i>
+     node<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"text"</font><font color="#990000">)</font>
+         <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"fill"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font><b><font color="#0000FF">return</font></b> <font color="#FF0000">"hsl("</font> <font color="#990000">+</font> Math<font color="#990000">.</font><b><font color="#000000">random</font></b><font color="#990000">()</font> <font color="#990000">*</font> 
+         <font color="#993399">360</font> <font color="#990000">+</font> <font color="#FF0000">",100%,50%)"</font><font color="#FF0000">}</font><font color="#990000">);</font>
+
+     node<font color="#990000">.</font><b><font color="#000000">exit</font></b><font color="#990000">().</font><b><font color="#000000">remove</font></b><font color="#990000">();</font> <i><font color="#9A1900">// exit</font></i>
+   <font color="#FF0000">}</font><font color="#990000">;</font> </tt>  </pre>
+
+      </section>  
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Dynamic SVG with graphics</h3>
         <iframe src="examples/example4b.html" 
-                style="float:left;width:30%;" 
                 height="300" scrolling="no"></iframe>
-        <pre 
-          style="margin-bottom:0;float:right;width:55%"><iframe 
-          src="examples/example4b-p.html" 
-          style="align:left;" 
-          height="475" width="100%" scrolling="auto"></iframe></pre>
       </section>
 
       <section class="slide">
-        <h2>Animation</h2>
-var sampleSVG = d3.select("#viz")
-    .append("svg")
-    .attr("width", 100)
-    .attr("height", 100);    
-    
-sampleSVG.append("circle")
-    .style("stroke", "gray")
-    .style("fill", "white")
-    .attr("r", 40)
-    .attr("cx", 50)
-    .attr("cy", 50)
-  .transition()
-    .delay(100)
-    .duration(1000)    
-    .attr("r", 10)
-    .attr("cx", 30)
-    .style("fill", "black");
+        <h2>Bar Chart Example</h2>
+        <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/7341714">Let's build a Bar Chart</a>"</p>
       </section>
 
       <section class="slide">
-        <h2>PLUGINS are the real power of d3</h2>
-        <h3>lots of screenshots</h3>
+        <h2>Bar Chart Example 1</h2>
+        <pre><tt>     <b><font color="#0000FF">var</font></b> width <font color="#990000">=</font> <font color="#993399">300</font><font color="#990000">;</font>
+     <b><font color="#0000FF">var</font></b> height <font color="#990000">=</font> <font color="#993399">350</font><font color="#990000">;</font>
+     
+     <b><font color="#0000FF">var</font></b> chart <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">".chart"</font><font color="#990000">)</font>
+                   <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"width"</font><font color="#990000">,</font> width<font color="#990000">)</font>
+                   <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"height"</font><font color="#990000">,</font> height<font color="#990000">);</font>
+     
+     <b><font color="#0000FF">var</font></b> data <font color="#990000">=</font> <font color="#990000">[</font><font color="#993399">1</font><font color="#990000">,</font> <font color="#993399">2</font><font color="#990000">,</font> <font color="#993399">4</font><font color="#990000">,</font> <font color="#993399">8</font><font color="#990000">,</font> <font color="#993399">16</font><font color="#990000">];</font>
+     
+     <b><font color="#0000FF">var</font></b> barWidth <font color="#990000">=</font> width <font color="#990000">/</font> data<font color="#990000">.</font>length<font color="#990000">;</font>
+     
+     <b><font color="#0000FF">var</font></b> bar <font color="#990000">=</font> chart<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"g"</font><font color="#990000">)</font><font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>data<font color="#990000">);</font></tt></pre>
+        <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/7341714">Let's build a Bar Chart</a>"</p>
+      </section>
+
+
+
+      <section class="slide">
+        <h2>Bar Chart Example 2</h2>
+        <pre><tt>     bar<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">().</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"g"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"transform"</font><font color="#990000">,</font> 
+              <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> 
+              <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"translate("</font> <font color="#990000">+</font> i <font color="#990000">*</font> barWidth <font color="#990000">+</font> <font color="#FF0000">",0)"</font><font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font>
+     
+     <i><font color="#9A1900">// add the rectangle</font></i>
+     bar<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"rect"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"y"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> height <font color="#990000">-</font> <font color="#990000">(</font>d <font color="#990000">*</font> <font color="#993399">20</font><font color="#990000">);</font> <font color="#FF0000">}</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"height"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d <font color="#990000">*</font> <font color="#993399">20</font><font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"width"</font><font color="#990000">,</font> barWidth <font color="#990000">-</font> <font color="#993399">1</font><font color="#990000">);</font>
+     
+     <i><font color="#9A1900">// add the label</font></i>
+     bar<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"text"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"x"</font><font color="#990000">,</font> barWidth <font color="#990000">/</font> <font color="#993399">2</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"y"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> height <font color="#990000">-</font> <font color="#990000">(</font>d <font color="#990000">*</font> <font color="#993399">20</font><font color="#990000">)</font> <font color="#990000">-</font> <font color="#993399">20</font><font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"dy"</font><font color="#990000">,</font> <font color="#FF0000">".75em"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"font-size"</font><font color="#990000">,</font> <font color="#FF0000">"40px"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"fill"</font><font color="#990000">,</font> <font color="#FF0000">"#111111"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d<font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font></tt>        </pre>
+        <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/7341714">Let's build a Bar Chart</a>"</p>
       </section>
 
       <section class="slide">
-        <h2>network example, same concepts, using network plugin</h2>
+        <h2>Bar Chart Example</h2>
+        <iframe src="examples/example5a.html" 
+                width="400" height="400" scrolling="no"></iframe>
+        <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/7341714">Let's build a Bar Chart</a>"</p>
       </section>
 
       <section class="slide">
-        <h2>stuff not covered!</h2>
-        <p>
-          Scales - convert between data and visual encodings
-          Time - parse or format times, compute calendar intervals, etc.
-          Geography - project spherical coordinates, latitude & longitude math
-          Geometry - utilities for 2D geometry, such as Voronoi diagrams and quadtrees
-        </p>
+        <h2>Other Examples Available Online</h2>
+        <iframe src="examples/bostock-sortable.html" width="100%" height="450"></iframe>
+        <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/3885705">Sortable Bar Chart</a>"</p>
+      </section>
+      <section class="slide">
+        <h2>Things we didn't get to today</h2>
+        <ul>
+          <li>Data Loading - load from files instead of hard-coded values</li>
+          <li>Transitions - provides smooth animation for your charts</li>
+          <li>Scales - convert between data and visual encodings</li>
+          <li>Time - parse or format times, compute calendar intervals, etc.</li>
+          <li>Geography - project spherical coordinates, latitude & longitude math</li>
+          <li>Geometry - utilities for 2D geometry, such as Voronoi diagrams and quadtrees</li>
+        </ul>
       </section>
 
       <section class="slide">
-        <h2>more information</h2>
+        <h2>More information</h2>
+        <ul>
+          <li>http://d3js.org</li>
+          <li>http://bost.ocks.org/mike/</li>
+          <li>https://www.dashingd3js.com/</li>
+          <li>http://chimera.labs.oreilly.com/books/1230000000345/index.html</li>
+        </ul>
       </section>
 
       <section class="slide">
         <h2>Thank You!</h2>
+        <h2>Eric Blaine Werner</h2>
+        <img align="right" src="images/ebw_from_below_effects.jpg"/>
+        <h3><a href="https://twitter.com/ebwinpgh">@ebwinpgh</a></h3>
+        <p>Technical Director<br/>
+          <a href="http://www.sei.cmu.edu/about/organization/etc/">Emerging Technolgy Center</a>
+          (<a href="https://twitter.com/sei_etc">@sei_etc</a>)<br/>
+          <a href="http://www.sei.cmu.edu/">Software Engineering Institute</a>
+          (<a href="https://twitter.com/seinews">@seinews</a>)<br/>
+          <a href="http://www.cmu.edu">Carnegie Mellon University</a>
+          (<a href="https://twitter.com/CarnegieMellon">@CarnegieMellon</a>)<br/><br/>
+          <p>eric.werner@gmail.com</p>
       </section>
-
-      <section class="slide">
-        <h2>references and tools</h2>
-        http://hilite.me/
-      </section>
-
 
       <!-- End slides. -->
 

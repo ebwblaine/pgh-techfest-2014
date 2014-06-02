@@ -1,0 +1,67 @@
+<!-- Generator: GNU source-highlight 3.1.6
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><b><font color="#000080">&lt;!DOCTYPE</font></b> <font color="#009900">html</font><b><font color="#000080">&gt;</font></b>
+<b><font color="#0000FF">&lt;html&gt;</font></b>
+  <b><font color="#0000FF">&lt;head&gt;</font></b>
+    <b><font color="#0000FF">&lt;meta</font></b> <font color="#009900">content</font><font color="#990000">=</font><font color="#FF0000">"text/html;charset=utf-8"</font> <font color="#009900">http-equiv</font><font color="#990000">=</font><font color="#FF0000">"Content-Type"</font><b><font color="#0000FF">&gt;</font></b>
+    <b><font color="#0000FF">&lt;meta</font></b> <font color="#009900">content</font><font color="#990000">=</font><font color="#FF0000">"utf-8"</font> <font color="#009900">http-equiv</font><font color="#990000">=</font><font color="#FF0000">"encoding"</font><b><font color="#0000FF">&gt;</font></b>
+    <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font> <font color="#009900">src</font><font color="#990000">=</font><font color="#FF0000">"js/d3.v3.min.js"</font><b><font color="#0000FF">&gt;&lt;/script&gt;</font></b>
+    <b><font color="#0000FF">&lt;style</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/css"</font><b><font color="#0000FF">&gt;</font></b>
+
+     <font color="#993399">.chart</font> rect <font color="#FF0000">{</font>
+       <font color="#0000FF">fill:</font> <i><font color="#009900">steelblue</font></i>;
+     <font color="#FF0000">}</font>
+
+     <font color="#993399">.chart</font> text <font color="#FF0000">{</font>
+       <font color="#0000FF">fill:</font> <i><font color="#009900">white</font></i>;
+       <font color="#0000FF">font:</font> <i><font color="#009900">10px</font></i> <i><font color="#009900">sans-serif</font></i>;
+       <font color="#0000FF">text-anchor:</font> <i><font color="#009900">middle</font></i>;
+     <font color="#FF0000">}</font>
+
+    <b><font color="#0000FF">&lt;/style&gt;</font></b>
+  <b><font color="#0000FF">&lt;/head&gt;</font></b>
+
+  <b><font color="#0000FF">&lt;body&gt;</font></b>
+    <b><font color="#0000FF">&lt;svg</font></b> <font color="#009900">class</font><font color="#990000">=</font><font color="#FF0000">"chart"</font><b><font color="#0000FF">&gt;&lt;/svg&gt;</font></b>
+    <b><font color="#0000FF">&lt;script&gt;</font></b>
+     
+     <b><font color="#0000FF">var</font></b> width <font color="#990000">=</font> <font color="#993399">300</font><font color="#990000">;</font>
+     <b><font color="#0000FF">var</font></b> height <font color="#990000">=</font> <font color="#993399">350</font><font color="#990000">;</font>
+     
+     <b><font color="#0000FF">var</font></b> chart <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">".chart"</font><font color="#990000">)</font>
+                   <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"width"</font><font color="#990000">,</font> width<font color="#990000">)</font>
+                   <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"height"</font><font color="#990000">,</font> height<font color="#990000">);</font>
+     
+     <b><font color="#0000FF">var</font></b> data <font color="#990000">=</font> <font color="#990000">[</font><font color="#993399">1</font><font color="#990000">,</font> <font color="#993399">2</font><font color="#990000">,</font> <font color="#993399">4</font><font color="#990000">,</font> <font color="#993399">8</font><font color="#990000">,</font> <font color="#993399">16</font><font color="#990000">];</font>
+     
+     <b><font color="#0000FF">var</font></b> barWidth <font color="#990000">=</font> width <font color="#990000">/</font> data<font color="#990000">.</font>length<font color="#990000">;</font>
+     
+     <b><font color="#0000FF">var</font></b> bar <font color="#990000">=</font> chart<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><font color="#990000">(</font><font color="#FF0000">"g"</font><font color="#990000">)</font>
+                    <font color="#990000">.</font><b><font color="#000000">data</font></b><font color="#990000">(</font>data<font color="#990000">);</font>
+
+     bar<font color="#990000">.</font><b><font color="#000000">enter</font></b><font color="#990000">().</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"g"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"transform"</font><font color="#990000">,</font> 
+              <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> 
+              <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> <font color="#FF0000">"translate("</font> <font color="#990000">+</font> i <font color="#990000">*</font> barWidth <font color="#990000">+</font> <font color="#FF0000">",0)"</font><font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font>
+     
+     <i><font color="#9A1900">// add the rectangle</font></i>
+     bar<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"rect"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"y"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> height <font color="#990000">-</font> <font color="#990000">(</font>d <font color="#990000">*</font> <font color="#993399">20</font><font color="#990000">);</font> <font color="#FF0000">}</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"height"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d <font color="#990000">*</font> <font color="#993399">20</font><font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"width"</font><font color="#990000">,</font> barWidth <font color="#990000">-</font> <font color="#993399">1</font><font color="#990000">);</font>
+     
+     <i><font color="#9A1900">// add the label</font></i>
+     bar<font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"text"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"x"</font><font color="#990000">,</font> barWidth <font color="#990000">/</font> <font color="#993399">2</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"y"</font><font color="#990000">,</font> <b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> height <font color="#990000">-</font> <font color="#990000">(</font>d <font color="#990000">*</font> <font color="#993399">20</font><font color="#990000">)</font> <font color="#990000">-</font> <font color="#993399">20</font><font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"dy"</font><font color="#990000">,</font> <font color="#FF0000">".75em"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"font-size"</font><font color="#990000">,</font> <font color="#FF0000">"40px"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"fill"</font><font color="#990000">,</font> <font color="#FF0000">"#111111"</font><font color="#990000">)</font>
+        <font color="#990000">.</font><b><font color="#000000">text</font></b><font color="#990000">(</font><b><font color="#0000FF">function</font></b><font color="#990000">(</font>d<font color="#990000">,</font> i<font color="#990000">)</font> <font color="#FF0000">{</font> <b><font color="#0000FF">return</font></b> d<font color="#990000">;</font> <font color="#FF0000">}</font><font color="#990000">);</font>
+
+    <b><font color="#0000FF">&lt;/script&gt;</font></b>
+  <b><font color="#0000FF">&lt;/body&gt;</font></b>
+<b><font color="#0000FF">&lt;/html&gt;</font></b>
+</tt></pre>

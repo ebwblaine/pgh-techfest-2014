@@ -1,4 +1,42 @@
-<pre><tt><b><b><font color="#0000FF">function</font></b> <b><font color="#000000">update</font></b><font color="#990000">(</font>names<font color="#990000">)</font><font color="#FF0000">{</font>
+<!-- Generator: GNU source-highlight 3.1.6
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><b><font color="#000080">&lt;!DOCTYPE</font></b> <font color="#009900">html</font><b><font color="#000080">&gt;</font></b>
+<b><font color="#0000FF">&lt;html&gt;</font></b>
+<b><font color="#0000FF">&lt;head&gt;</font></b>
+<b><font color="#0000FF">&lt;meta</font></b> <font color="#009900">content</font><font color="#990000">=</font><font color="#FF0000">"text/html;charset=utf-8"</font> <font color="#009900">http-equiv</font><font color="#990000">=</font><font color="#FF0000">"Content-Type"</font><b><font color="#0000FF">&gt;</font></b>
+<b><font color="#0000FF">&lt;meta</font></b> <font color="#009900">content</font><font color="#990000">=</font><font color="#FF0000">"utf-8"</font> <font color="#009900">http-equiv</font><font color="#990000">=</font><font color="#FF0000">"encoding"</font><b><font color="#0000FF">&gt;</font></b>
+<b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font> <font color="#009900">src</font><font color="#990000">=</font><font color="#FF0000">"js/d3.v3.min.js"</font><b><font color="#0000FF">&gt;&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;style</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/css"</font><b><font color="#0000FF">&gt;</font></b>
+ body
+ <font color="#FF0000">{</font>
+   <font color="#0000FF">background-color:</font><font color="#FF0000">#CCCCCC</font>;
+ <font color="#FF0000">}</font>
+ 
+ p
+ <font color="#FF0000">{</font>
+   <font color="#0000FF">line-height:</font><i><font color="#009900">55%</font></i>;
+ <font color="#FF0000">}</font>
+<b><font color="#0000FF">&lt;/style&gt;</font></b>
+<b><font color="#0000FF">&lt;/head&gt;</font></b>
+
+<b><font color="#0000FF">&lt;body&gt;</font></b>
+  <b><font color="#0000FF">&lt;button</font></b> <font color="#009900">id</font><font color="#990000">=</font><font color="#FF0000">"button1"</font> <font color="#009900">onclick</font><font color="#990000">=</font><font color="#FF0000">"button1_click()"</font><b><font color="#0000FF">&gt;</font></b>HOME<b><font color="#0000FF">&lt;/button&gt;</font></b>
+  <b><font color="#0000FF">&lt;button</font></b> <font color="#009900">id</font><font color="#990000">=</font><font color="#FF0000">"reset"</font> <font color="#009900">onclick</font><font color="#990000">=</font><font color="#FF0000">"reset_click()"</font><b><font color="#0000FF">&gt;</font></b>RESET!<b><font color="#0000FF">&lt;/button&gt;</font></b>
+  <b><font color="#0000FF">&lt;h2&gt;</font></b>Example 3a<b><font color="#0000FF">&lt;/h2&gt;</font></b>
+  <b><font color="#0000FF">&lt;script</font></b> <font color="#009900">type</font><font color="#990000">=</font><font color="#FF0000">"text/javascript"</font><b><font color="#0000FF">&gt;</font></b>
+
+   <b><font color="#0000FF">var</font></b> home <font color="#990000">=</font> <font color="#990000">[</font><font color="#FF0000">"Walter"</font><font color="#990000">,</font><font color="#FF0000">"Skyler"</font><font color="#990000">,</font> <font color="#FF0000">"Hank"</font><font color="#990000">,</font> <font color="#FF0000">"Marie"</font><font color="#990000">];</font>
+   
+   <i><font color="#9A1900">// append an SVG element</font></i>
+   <b><font color="#0000FF">var</font></b> svg <font color="#990000">=</font> d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">)</font>
+               <font color="#990000">.</font><b><font color="#000000">append</font></b><font color="#990000">(</font><font color="#FF0000">"svg"</font><font color="#990000">)</font>
+               <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"width"</font><font color="#990000">,</font> <font color="#993399">300</font><font color="#990000">)</font>
+               <font color="#990000">.</font><b><font color="#000000">attr</font></b><font color="#990000">(</font><font color="#FF0000">"height"</font><font color="#990000">,</font> <font color="#993399">300</font><font color="#990000">)</font>
+               <font color="#990000">.</font><b><font color="#000000">style</font></b><font color="#990000">(</font><font color="#FF0000">"background-color"</font><font color="#990000">,</font> <font color="#FF0000">"#999999"</font><font color="#990000">);</font>
+
+   <b><font color="#0000FF">function</font></b> <b><font color="#000000">update</font></b><font color="#990000">(</font>names<font color="#990000">)</font><font color="#FF0000">{</font>
      <b><font color="#0000FF">var</font></b> body<font color="#990000">=</font>d3<font color="#990000">.</font><b><font color="#000000">select</font></b><font color="#990000">(</font><font color="#FF0000">"body"</font><font color="#990000">);</font>
      
      <i><font color="#9A1900">// bind our data to SVG Text elements</font></i>
@@ -22,4 +60,7 @@
    <b><font color="#0000FF">function</font></b> <b><font color="#000000">reset_click</font></b><font color="#990000">()</font> <font color="#FF0000">{</font>
      <b><font color="#000000">update</font></b><font color="#990000">([]);</font>
    <font color="#FF0000">}</font><font color="#990000">;</font>
+  <b><font color="#0000FF">&lt;/script&gt;</font></b>
+<b><font color="#0000FF">&lt;/body&gt;</font></b>
+<b><font color="#0000FF">&lt;/html&gt;</font></b>
 </tt></pre>
