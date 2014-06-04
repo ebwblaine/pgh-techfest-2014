@@ -20,7 +20,7 @@
 <body>
   <button id="button1" onclick="button1_click()">HOME</button>
   <button id="reset" onclick="reset_click()">RESET!</button>
-  <h2>Example 3a</h2>
+  <h2>Example 4b</h2>
   <script type="text/javascript">
 
    var home = ["Walter","Skyler", "Hank", "Marie"];
@@ -42,17 +42,17 @@
 
      // enter
 
-     enterNode = node.enter()
+     var enterSelect = node.enter()
                      .append("svg:g")
                      .attr("class", "node");
      
-     enterNode.append("rect")
+     enterSelect.append("rect")
          .attr("x", 10)
          .attr("y", function(d, i) { return (i + 1) *25;}) // based on index
          .attr("height", 10)
          .attr("width", 10);
      
-     enterNode.append("svg:text")
+     enterSelect.append("svg:text")
          .attr("dx", 12)
          .attr("dy",  function(d, i) { return (i + 1) *25;})
          .text(function(d){return d;});

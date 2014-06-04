@@ -20,7 +20,7 @@
 <body>
   <button id="button1" onclick="button1_click()">HOME</button>
   <button id="reset" onclick="reset_click()">RESET!</button>
-  <h2>Example 3a</h2>
+  <h2>Example 4a</h2>
   <script type="text/javascript">
 
    var home = ["Walter","Skyler", "Hank", "Marie"];
@@ -38,15 +38,15 @@
      // bind our data to SVG Text elements
      var text = svg.selectAll("text").data(names);
 
-     text.enter()
-         .append("text") // create the text element
+     text.enter()  // enter
+         .append("svg:text") // create the text element
          .attr("x", 10) // set the x as constant
          .attr("y", function(d, i) { return (i + 1) *25;}) // based on index
          .style("font-size", "18") 
          .style("fill", "blue");
 
-     text.text(function(d){return d;});
      text.exit().remove(); // exit
+     text.text(function(d){return d;}); // update
    };
 
    function button1_click() {
