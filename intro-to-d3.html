@@ -406,7 +406,7 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
         <iframe src="examples/example2a.html" width="95%" height="200"></iframe>
         <br clear="all"/>
         <br/>
-        <p>Debug this example to see the elements changed live<br/>
+        <p>Note that the color is computed at RUNTIME - late binding.<br/>
           also see: <a href="http://d3js.org/#properties">http://d3js.org/#properties</a></p>
       </section>
 
@@ -566,6 +566,18 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
           <a href="http://bost.ocks.org/mike/join/">http://bost.ocks.org/mike/join/</a></p>
       </section>
 
+      <section class="slide" >
+        <h2>Data</h2>
+        <p>This is called the General Update Pattern, and it is fundamental to d3
+        <ul>
+          <li>Enter - representing arriving data elements</li>
+          <li>Exit - representing departing data elements</li>
+          <li>Update - representing existing data elements </li>
+        </ul>
+        </p>
+        <p>see more about the General Update Pattern at <a href="http://bl.ocks.org/mbostock/3808218">http://bl.ocks.org/mbostock/3808218</a>
+      </section>
+
 
       <section class="slide">
         <h2>Scalable Vector Graphics</h2>
@@ -602,6 +614,7 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
     <b><font color="#0000FF">&lt;text</font></b> <font color="#009900">style</font><font color="#990000">=</font><font color="#FF0000">"fill: rgb(255, 0, 255);"</font> <font color="#009900">dy</font><font color="#990000">=</font><font color="#FF0000">"100"</font> <font color="#009900">dx</font><font color="#990000">=</font><font color="#FF0000">"12"</font><b><font color="#0000FF">&gt;</font></b>Marie<b><font color="#0000FF">&lt;/text&gt;</font></b>
   <b><font color="#0000FF">&lt;/g&gt;</font></b>
   <b><font color="#0000FF">&lt;/svg&gt;</font></b></tt>          </pre>
+        <p>this is not the ideal way to build an SVG</p>
       </section>
 
       <section class="slide">
@@ -609,6 +622,13 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
         <h3>Static SVG Reminder</h3>
         <iframe src="examples/example4a1.html" 
                 height="300" scrolling="no"></iframe>
+      </section>
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Dynamic SVG with text</h3>
+        <p>D3 has full support for creating and manipulating SVG.  In this next example we'll build an SVG just like we built an HTML document using data from our program.</p>
+
       </section>
         
       <section class="slide">
@@ -645,6 +665,15 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
         <h3>Dynamic SVG with text</h3>
         <iframe src="examples/example4a.html" 
                 height="300" scrolling="no"></iframe>
+      </section>
+
+      <section class="slide">
+        <h2>SVG</h2>
+        <h3>Dynamic SVG with graphics</h3>
+        <p>In this next example we add graphics.  We cover some details with hierarchical containment as well as x/y placement of the graphics in the SVG.</p>
+        <p>This example also shows late property binding with functions.</p>
+
+
       </section>
 
       <section class="slide">
@@ -688,8 +717,13 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
 
       <section class="slide">
         <h2>Bar Chart Example</h2>
+        <h3>Next we put it all together to build a basic visualization - a bar chart</h3>
+        <p>We'll use a static dataset, and bind SVG elements to the data elements letting the data specify graphical properties (bar height)</p>
+        <p>For simplicity, we'll hard-code a number of things in this example.</p>
+        
         <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/7341714">Let's build a Bar Chart</a>"</p>
       </section>
+
 
       <section class="slide">
         <h2>Bar Chart Example 1</h2>
@@ -746,8 +780,14 @@ body<font color="#990000">.</font><b><font color="#000000">selectAll</font></b><
 
       <section class="slide">
         <h2>Other Examples Available Online</h2>
+        <h3>Sortable Bar Chart</h3>
+      </section>
+
+
+      <section class="slide">
+        <h2>Other Examples Available Online</h2>
         <iframe src="examples/bostock-sortable.html" width="100%" height="450"></iframe>
-        <p>Adapted from Bostock's "<a href="http://bl.ocks.org/mbostock/3885705">Sortable Bar Chart</a>"</p>
+        <p>this example toggles between using the index for the bar position and the value</p>
       </section>
 
       <section class="slide">
